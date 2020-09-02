@@ -1,0 +1,53 @@
+Open fiddler
+
+If things get loaded too much, Ctrl+A to select all and delete them
+
+When you want to start working, load the browser again and entry will come up in fiddleer
+
+Double click on the entry to see its details
+
+Get-
+Load the url in chrome again
+
+Double click on entry in fiddler
+
+Open composer
+
+Drag and drop the entry in composer
+
+change Accept: application/json
+add Content-Type: application/json below Accept
+
+//you opened the previous one only
+
+Select get and execute it
+
+New result will appear in the list with same localhost name
+
+Double click on the new entry to view get results
+wait
+Follow the same order: address first asaohk 
+yaayyyyy
+wait ill try now
+
+raav, try from start na?
+ohk
+
+{"address":"panjim","email":"sam@gmail.com","id": "06","name":"sami","phone":"9923289074"}
+
+
+<div class="well hidden" id="divdata">
+        <table class="table table-bordered" id="tblData">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody id="tblbody"> </tbody>
+
+        </table>
+    </div>

@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using EmployeeDataAcess;
+
+namespace EmployeeService.Controllers
+{
+    public class EmployeesController : ApiController
+    {
+        public IEnumerable<customer> Get()
+        {
+            using(webapidbEntities entities=new webapidbEntities())
+            {
+                return entities.customers.ToList();
+            }
+        }
+        public customer Get(int id)
+        {
+            using (webapidbEntities entities = new webapidbEntities())
+            {
+
+                return entities.customers.FirstOrDefault(c=>c.id==id);
+            }
+        }
+        public void Post([ FromBody] customer Customer)
+        {
+            using (webapidbEntities entities = new webapidbEntities())
+            {
+
+                 entities.customers.Add(Customer);
+                 entities.SaveChanges();
+            }
+        }
+        public void Delete(int id)
+        {
+            using (webapidbEntities entities = new webapidbEntities())
+            {
+
+                entities.customers.Remove(entities.customers.FirstOrDefault(c => c.id == id));
+                entities.SaveChanges();
+            }
+        }
+        public void Put(int id,[FromBody] customer Customer)
+        {
+            using (webapidbEntities entities = new webapidbEntities())
+            {
+
+                
+                var entitiy =entities.customers.FirstOrDefault(c => c.id == id);
+                entitiy.name = Customer.name;
+                entitiy.email = Customer.email;
+                entitiy.address = Customer.address;
+                entitiy.phone = Customer.phone;
+
+                entities.SaveChanges();
+            }
+        }
+
+    }
+
+}
